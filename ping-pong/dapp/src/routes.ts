@@ -1,3 +1,4 @@
+import { dAppName } from 'config';
 import withPageTitle from './components/PageTitle';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
@@ -33,8 +34,8 @@ const routes: Array<any> = [
 
 const mappedRoutes = routes.map((route) => {
   const title = route.title
-    ? `${route.title} • Crypto Cavemen`
-    : 'Crypto Cavemen';
+    ? `${route.title} • Elrond ${dAppName}`
+    : `Elrond ${dAppName}`;
 
   const requiresAuth = Boolean(route.authenticatedRoute);
   const wrappedComponent = withPageTitle(title, route.component);
